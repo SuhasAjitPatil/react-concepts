@@ -4,16 +4,19 @@ import ReactDOM from 'react-dom'
 import { HashRouter as Router } from 'react-router-dom'
 import Routes from './routes.jsx'
 import './styles.css'
-import {$} from './generator/helpers'
+//import App from './Suhas/App.jsx';
+import App from './App';
 
-$('#app')
-.map(x => x[0])
-.map(container => {
-  ReactDOM.render(
-    <Router>
-      {Routes.run()}
-    </Router>,
-    container
-  )
-})
-.run()
+ReactDOM.render(
+ /* <Router>
+      <Routes/>
+  </Router>,
+document.getElementById('app'),
+*/
+
+<App />, document.getElementById('root')
+
+
+)
+
+
