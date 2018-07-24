@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --hot --colors",
     "build": "webpack",
-    "test": "standard && jest"
+    "test": "standard && jest",
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
