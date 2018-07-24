@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 import Person from './Person/Person';
+import { constants } from 'os';
+
 
 class App extends Component {
     constructor(props) {
@@ -62,11 +64,13 @@ class App extends Component {
 
     render() {   
         const style ={
-            backgroundColor : 'white',
+            backgroundColor : 'green',
+            color : 'white',
             font : 'inherit',
             border : '1px solid blue',
             padding : '8px',
-            cursor: 'pointer'
+            cursor: 'pointer',
+          
         };
 
         let persons = null;
@@ -83,7 +87,7 @@ class App extends Component {
                       // changed={this.nameChangeHandler(event, person.id)}/> 
                       changed={(event) => this.nameChangeHandler(event, person.id)}/> 
                 })}
-
+                    
                 {/* <Person 
                     name={this.state.persons[0].name}
                     age={this.state.persons[0].age}>My Hobbies: Playing games..</Person>
@@ -97,17 +101,31 @@ class App extends Component {
                     age={this.state.persons[2].age}/> */}
             </div>
             )
+            style.backgroundColor = 'red';
+         
         }
 
+        const classes = [];
+
+        if(this.state.persons.length <= 2){
+            classes.push ('red');
+        }
+
+        if(this.state.persons.length <= 1) {
+            classes.push('bold');
+        }    
+
         return(
-            <div className="App"> 
-                <h1>Hi, I'm in a React App</h1>
-                <button 
-                    style={style}
-                    onClick={this.togglePersonHandler.bind(this)}>Toggle Persons</button>
-                    {persons}                
-            </div> 
-               
+          
+                <div className="App"> 
+                    <h1>Hi, I'm in a React App</h1>
+                    <p className={classes.join(' ')}>This is really working!!</p>
+                    <button 
+                        style={style}
+                        onClick={this.togglePersonHandler.bind(this)}>Toggle Persons</button>
+                        {persons}                
+                </div> 
+           
         );
    //     return React.createElement('div',{className:'App'},React.createElement('h1',null,'I am in React App'));
     }
