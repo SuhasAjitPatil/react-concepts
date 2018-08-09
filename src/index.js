@@ -5,7 +5,7 @@ import { HashRouter as Router } from 'react-router-dom'
 import Routes from './routes.jsx'
 import './styles.css'
 //import App from './Suhas/App.jsx';
-import App from './App';
+import App from './containers/App';
 
 ReactDOM.render(
  /* <Router>
@@ -14,7 +14,7 @@ ReactDOM.render(
 document.getElementById('app'),
 */
 
-<App />, document.getElementById('root')
+<App title='Relevant Persons'/>, document.getElementById('root')
 
 
 )
